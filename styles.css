@@ -1,0 +1,138 @@
+/* Author: Matthew Kolbe 11/3/2025 */
+/* create a global variable */
+:root {
+    --primary-color: #a5bbca;
+    --secondary-color: rgb(212, 214, 223);
+    --background-color: rgb(180, 169, 136);
+    --text-color: #04333c;
+}
+/* change the background color and centered text */
+body {
+    background-color: var(--background-color);
+    text-align: center;
+}
+/* create baseline grid for mobile */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+}
+/* make header span the whole grid. border, background color, and text preferences */
+header {
+    grid-column: 1/4;
+    border: 5px solid black;
+    background-color: var(--secondary-color);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color)
+}
+#h1{
+    border: 5px solid black;
+    background-color: var(--secondary-color);
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color)
+}
+/* make the nav part of the grid. used a picture for the background. */
+nav {
+    grid-column: 1/3;
+    border: 3px solid black;
+    background-image: url(img/fishing1.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+}
+/* moved the links to the left for visibility. made the secondary color opaque from here on. */
+#link1 {
+    border: 2px solid black;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(212, 214, 223, 0.7);
+}
+
+#link2 {
+    border: 2px solid black;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgb(212, 214, 223, 0.7);
+}
+/* gave a border */
+h2 {
+    border: 3px solid black;
+    background-color: rgb(212, 214, 223, 0.7);
+}
+/* text preferences */
+ul {
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: rgb(212, 214, 223, 0.7);
+}
+/* made part of grid */
+section {
+    grid-column: 1/3;
+}
+/* made part of grid. used a different background image */
+aside {
+    grid-column: 1/3;
+    border: 3px solid black;
+    background-image: url(img/respool.webp);
+    background-size: cover;
+    background-position: center;
+}
+/* made part of grid */
+footer {
+    grid-column: 1/3;
+}
+
+p{
+    background-color: rgb(212, 214, 223, 0.7);
+}
+/* embedded a video of a family fishing. relative positioning to span with browser size */
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* changed the grid to 3 columns and 3 rows. moved semantic tag content to reflect a bigger screen */
+@media (min-width: 720px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    header {
+        grid-column: 1/4;
+    }
+
+    nav {
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    section {
+        grid-column: 2/3;
+    }
+
+    aside {
+        grid-column: 3/4;
+    }
+
+    footer {
+        grid-column: 1/4;
+    }
+}
